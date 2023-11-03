@@ -1,4 +1,4 @@
 + Let the user know how many letters the secret word contains - kind of happening with blanks
 + Check if letters can be entered as upper or lowercase without problems
 Reveal the word to the user when the user runs out of guesses
-Ask the user if they want to play again
+ + Ask the user if they want to play again

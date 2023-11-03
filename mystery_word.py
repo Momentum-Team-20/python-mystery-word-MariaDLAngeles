@@ -45,8 +45,12 @@ def play_game():
                     # this is where you win and the game ends
             # this is if you guessed wrong
             else:
+                # changing this to elif to see if we can add an else for losing the game
                 remaining_tries_counter = remaining_tries_counter-1
                 print('Nope! You have ', f'{remaining_tries_counter} tries left')
+        # added this else statement and changed above to elif
+            if remaining_tries_counter == 0:
+                print("Oh no! Your mystery word was:", chosen_word)
     # print('You finished the game!')
     play_again = input('Want to play again? Y/N ').lower()
     if play_again == 'y':
