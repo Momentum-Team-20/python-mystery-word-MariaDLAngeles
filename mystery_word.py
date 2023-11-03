@@ -9,6 +9,7 @@ def play_game():
     word_list = all_words.split()
     chosen_word = random.choice(word_list)
     print(chosen_word)
+    print('The mystery word is', len(chosen_word), 'letters long')
     guesses = []
     display = ["_" for character in chosen_word]
     print(display)
@@ -17,7 +18,7 @@ def play_game():
     while remaining_tries_counter > 0 and chosen_word != ''.join(display):
         # this is true for when the game is lost
         # game is won when the loop is false
-        guess = input("Guess a letter! ")
+        guess = input("Guess a letter! ").lower()
         # we need to check that our guess is valid(no repeats, no more than 1 letter)
         if len(guess) > 1:
             print('Guess ONE letter at a time!')
