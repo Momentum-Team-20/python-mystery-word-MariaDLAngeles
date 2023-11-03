@@ -1,5 +1,4 @@
 import random
-MAX_INCORRECT_TRIES = 8
 
 
 def play_game():
@@ -48,7 +47,13 @@ def play_game():
             else:
                 remaining_tries_counter = remaining_tries_counter-1
                 print('Nope! You have ', f'{remaining_tries_counter} tries left')
-    print('Game Over!')
+    # print('You finished the game!')
+    play_again = input('Want to play again? Y/N ').lower()
+    if play_again == 'y':
+        play_game()
+    else:
+        exit()
+
     # this is where you lose and the game ends
     # letters = [letter for letter in chosen_word]
     # print(letters)
