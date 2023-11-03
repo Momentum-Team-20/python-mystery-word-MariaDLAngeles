@@ -7,7 +7,7 @@ def play_game():
     all_words = f.read()
     word_list = all_words.split()
     chosen_word = random.choice(word_list)
-    print(chosen_word)
+    # print(chosen_word)
     print('The mystery word is', len(chosen_word), 'letters long')
     guesses = []
     display = ["_" for character in chosen_word]
@@ -36,9 +36,8 @@ def play_game():
                 for index in range(len(chosen_word)):
                     if guess == chosen_word[index]:
                         display[index] = guess
-                        print(display)
-                        print('chosen_word: ', chosen_word)
-                        print(guesses)
+                        # print('chosen_word: ', chosen_word)
+                        # print(guesses)
                 if chosen_word == ''.join(display):
                     # remaining_tries_counter = 0
                     print('You won!')
@@ -49,6 +48,7 @@ def play_game():
                 remaining_tries_counter = remaining_tries_counter-1
                 print('Nope! You have ', f'{remaining_tries_counter} tries left')
         # added this else statement and changed above to elif
+            print(display)
             if remaining_tries_counter == 0:
                 print("Oh no! Your mystery word was:", chosen_word)
     # print('You finished the game!')
