@@ -14,11 +14,17 @@ def play_game():
     print(display)
     remaining_tries_counter = 8
     # start loop here
-    while remaining_tries_counter > 0:
+    while remaining_tries_counter > 0 and chosen_word != ''.join(display):
+        # this is true for when the game is lost
+        # game is won when the loop is false
         guess = input("Guess a letter! ")
         # we need to check that our guess is valid(no repeats, no more than 1 letter)
-        if len(guess) > 1 or not guess.isalpha():
-            print('Guess ONE LETTER at a time!')
+        if len(guess) > 1:
+            print('Guess ONE letter at a time!')
+        elif not guess.isalpha():
+            print('Guess a LETTER!')
+        elif guess in guesses:
+            print("You already guessed that!")
             print('Guess List/Array', guesses)
         # getting here means the input is valid and now we check the guess for right or wrong
         else:
@@ -34,7 +40,7 @@ def play_game():
                         print('chosen_word: ', chosen_word)
                         print(guesses)
                 if chosen_word == ''.join(display):
-                    remaining_tries_counter = 0
+                    # remaining_tries_counter = 0
                     print('You won!')
                     # this is where you win and the game ends
             # this is if you guessed wrong
