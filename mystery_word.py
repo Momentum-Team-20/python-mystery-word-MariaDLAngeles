@@ -13,7 +13,7 @@ def play_game():
     display = ["_" for character in chosen_word]
     print(display)
     remaining_tries_counter = 8
-    # start loop here
+    # Loop starts here
     while remaining_tries_counter > 0 and chosen_word != ''.join(display):
         guess = input("Guess a letter: ").lower()
         # first we check for valid user inputs (no numbers, no #$@*!)
@@ -23,7 +23,6 @@ def play_game():
             print('Invalid entry: Letters only.')
         elif guess in guesses:
             print("You already guessed that!")
-            # print('Guess List/Array', guesses)
         # next we check if the user guess is right or wrong
         else:
             # right or wrong, the user guess need to be stored in guesses
@@ -34,8 +33,6 @@ def play_game():
                 for index in range(len(chosen_word)):
                     if guess == chosen_word[index]:
                         display[index] = guess
-                        # print('chosen_word: ', chosen_word)
-                        # print(guesses)
                 if chosen_word == ''.join(display):
                     print('You won!')
             # if you guessed WRONG
